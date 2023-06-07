@@ -360,10 +360,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[14] =
+static const flex_int16_t yy_accept[19] =
     {   0,
-        0,    0,    7,    5,    1,    1,    3,    4,    2,    1,
-        4,    2,    0
+        0,    0,    7,    6,    3,    5,    2,    1,    1,    4,
+        3,    0,    0,    1,    1,    0,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -371,15 +371,15 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    4,    1,    4,    1,    1,    5,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    4,
+        4,    4,    5,    1,    5,    6,    4,    7,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    1,    9,    1,
+        4,    1,    1,    1,    1,    1,    1,    1,   10,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+       11,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,33 +398,38 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[7] =
+static const YY_CHAR yy_meta[12] =
     {   0,
-        1,    2,    2,    1,    3,    3
+        1,    1,    1,    1,    2,    1,    3,    3,    1,    1,
+        1
     } ;
 
-static const flex_int16_t yy_base[17] =
+static const flex_int16_t yy_base[21] =
     {   0,
-        0,    0,   10,   11,    0,    0,   11,    0,    0,    0,
-        0,    0,   11,    7,    5,    4
+        0,    0,   26,   27,   23,   27,   27,    6,   11,   27,
+       22,    0,   10,    0,   10,    9,    0,   27,   10,   20
     } ;
 
-static const flex_int16_t yy_def[17] =
+static const flex_int16_t yy_def[21] =
     {   0,
-       13,    1,   13,   13,   14,   14,   13,   15,   16,   14,
-       15,   16,    0,   13,   13,   13
+       18,    1,   18,   18,   18,   18,   18,   18,    8,   18,
+       18,   19,   20,    9,   19,   20,   16,    0,   18,   18
     } ;
 
-static const flex_int16_t yy_nxt[18] =
+static const flex_int16_t yy_nxt[39] =
     {   0,
-        4,    5,    6,    7,    8,    9,   12,   11,   10,   13,
-        3,   13,   13,   13,   13,   13,   13
+        4,    5,    6,    7,    7,    4,    8,    9,   10,    4,
+        4,   12,   15,   18,   16,   13,   13,   14,   14,   13,
+       13,   17,   17,   11,   11,   18,    3,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
-static const flex_int16_t yy_chk[18] =
+static const flex_int16_t yy_chk[39] =
     {   0,
-        1,    1,    1,    1,    1,    1,   16,   15,   14,    3,
-       13,   13,   13,   13,   13,   13,   13
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    8,   19,   16,   13,    8,    8,    9,    9,   15,
+       15,   20,   20,   11,    5,    3,   18,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,20 +446,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "inTopost.l"
-#line 2 "inTopost.l"
-#include <stdio.h>
-#include <string.h>
+#line 1 "calc.l"
+#line 2 "calc.l"
+#include "calc.tab.h"
 #include <stdlib.h>
-#include <stdbool.h>
-#define NUMBER 1
-#define OPERATOR 2
-#define ERROR 3
-#define ERRORINVALID 4
-#define SIZE 101
-#line 456 "lex.yy.c"
+void yyerror(char *);
+#line 455 "lex.yy.c"
 /* regexp definitions */
-#line 458 "lex.yy.c"
+#line 457 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -671,7 +670,8 @@ YY_DECL
 		}
 
 	{
-#line 18 "inTopost.l"
+#line 21 "calc.l"
+
 
 #line 677 "lex.yy.c"
 
@@ -700,13 +700,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 14 )
+				if ( yy_current_state >= 19 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 11 );
+		while ( yy_base[yy_current_state] != 27 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -731,34 +731,34 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 19 "inTopost.l"
-{}
+#line 23 "calc.l"
+{ yylval.ldouble = atof(yytext); return NUMBER; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 20 "inTopost.l"
-{ return NUMBER; }
+#line 24 "calc.l"
+{ return *yytext; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 21 "inTopost.l"
-{ return OPERATOR;}
+#line 25 "calc.l"
+;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 22 "inTopost.l"
-{ return ERROR; }
+#line 26 "calc.l"
+{ return *yytext; }
 	YY_BREAK
 case 5:
+/* rule 5 can match eol */
 YY_RULE_SETUP
-#line 23 "inTopost.l"
-{ return ERRORINVALID; }
+#line 27 "calc.l"
+{ return *yytext; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 24 "inTopost.l"
+#line 29 "calc.l"
 ECHO;
 	YY_BREAK
 #line 765 "lex.yy.c"
@@ -1058,7 +1058,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 14 )
+			if ( yy_current_state >= 19 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1086,11 +1086,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 14 )
+		if ( yy_current_state >= 19 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 13);
+	yy_is_jam = (yy_current_state == 18);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1766,121 +1766,11 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 24 "inTopost.l"
+#line 29 "calc.l"
 
 
-
-void printError(){
-  printf("error\n");
+int yywrap(void)
+{
+  return 1;
 }
-
-int
-main(){
- int token;
- 
- /* postfix representation 이차원배열  */
- char **answer;
- answer = (char**) malloc(sizeof(char*) * 100);
- int index = 0;
- 
- /* operation 출력 순서를 위한, 이차원배열 stack 구조  */
- char **op;
- op = (char**) malloc(sizeof(char*) * 100);
- int opIndex = 0;
- int opStatus = -1;
- bool opSubStatus = false;
-
- bool status = true; 
- int numCount = 0;
-
-
- while(token = yylex()){
-  
-  /* infix 아닌경우 예외처리  */
-  if(numCount != 0 && numCount != 1){
-      printError();
-      printf("not infix\n");
-      status = false;
-      break;
-  }
-
-  /* 정수일 경우 */
-  if(token == NUMBER){
-    
-    numCount++;
-    answer[index] = (char*) malloc(sizeof(char) * yyleng);
-    strcpy(answer[index], yytext);
-    
-    index++;
-   
-  } else if(token == OPERATOR){
-  
-  /* 연산자일 경우  */
-    numCount--;
-
-    if(opStatus == 0) {
-        answer[index] = (char*) malloc(sizeof(char) * strlen(op[opIndex]));
-        strcpy(answer[index], op[opIndex]);
-	
-     	opSubStatus = false;  
-        index++;  
-        opIndex++;
-
-        op[opIndex] = (char*) malloc(sizeof(char) * yyleng);
-        strcpy(op[opIndex], yytext);
-
-	
-    } else if(opStatus  == -1) { 
-	op[opIndex] = (char*) malloc(sizeof(char) * yyleng);
-        strcpy(op[opIndex], yytext);
-	
-	opSubStatus = true;
-
-    } else { 
-	printError(); 
-	status = false; 
-	break;  
-    }
-
-    if(opSubStatus){
-	opStatus++;
-    }else{
-	opStatus--;
-    }
-
-
-  } else if(token == ERROR){
-	
-    /* 0으로 시작하는 정수 예외처리  */
-    printError();
-    printf("remove front 0\n");
-    status = false;
-    break;
-  } else{
-
-    /* 정수나 +,- 연산자가 아닌경우 예외처리 */
-    printError();
-    printf("invalid value\n");
-    status = false;
-    break;
-  }
- }
-
-
- if(status){ 
- 
-  answer[index] = (char*) malloc(sizeof(char) * strlen(op[opIndex]));
-
-  strcpy(answer[index], op[opIndex]);
-
-  
-  for(int i = 0; i <= index; i++){
-    printf("%s ", answer[i]);
-  }
-    printf("\n");
- }
-
-
-}
-
 
